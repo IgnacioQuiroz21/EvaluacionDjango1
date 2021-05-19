@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Libro de Combate</title>
-    <link rel="stylesheet" href="Libreria/css/bootstrap.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="Libreria/css/style.css">
+    <link rel="stylesheet" href="{% static 'combate/css/bootstrap.min.css'%}" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'combate/css/style.css'%}">
 
 </head>
 
-<body>
+<body style="background-image: url('{% static "/combate/Imagenes/calpheon.png"%}');">
     <!--Header -->
     <header>
         <div class="container-fluid bg-dark">
@@ -20,19 +21,19 @@
                 <div class="col-sm p-2 mx-md-5 text-center ">
 
                     <div class="col d-inline-flex  p-3">
-                        <a href="https://discord.com/"><img src="Imagenes/Discord.png" class="img-fluid" width="30"
+                        <a href="https://discord.com/"><img src="{% static 'combate/Imagenes/Discord.png'%}" class="img-fluid" width="30"
                                 alt=""></a>
                     </div>
                     <div class="col d-inline-flex p-3">
-                        <a href="https://twitch.com/"><img src="Imagenes/Twitch.png" class="img-fluid" width="30"
+                        <a href="https://twitch.com/"><img src="{% static 'combate/Imagenes/Twitch.png'%}" class="img-fluid" width="30"
                                 alt=""></a>
                     </div>
                     <div class="col d-inline-flex p-3">
-                        <a href="https://Youtube.com/"><img src="Imagenes/Youtube.png" class="img-fluid" width="30"
+                        <a href="https://Youtube.com/"><img src="{% static 'combate/Imagenes/Youtube.png'%}" class="img-fluid" width="30"
                                 alt=""></a>
                     </div>
                     <div class="col d-inline-flex p-3">
-                        <a href="https://blackdesert.playredfox.com/black_desert"><img src="Imagenes/BDO.png" class="img-fluid" width="30"
+                        <a href="https://blackdesert.playredfox.com/black_desert"><img src="{% static 'combate/Imagenes/BDO.png'%}" class="img-fluid" width="30"
                                 alt=""></a>
                     </div>
 
@@ -47,7 +48,7 @@
         <div class="container-fluid ">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <a href="index.html"><img src="Imagenes/Logotipo.png" style="margin: 0 auto;" width="250"
+                    <a href="{% url 'Inicio' %}"><img src="{% static 'combate/Imagenes/Logotipo.png'%}" style="margin: 0 auto;" width="250"
                             alt=""></a>
                 </div>
 
@@ -78,21 +79,21 @@
                             <div class="collapse navbar-collapse" id="navbarText">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="index.html">Inicio</a>
+                                        <a class="nav-link" href="{% url 'Inicio' %}">Inicio</a>
                                     </li>
                                     <li class="nav-item ">
                                         <a class="nav-link dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Guias</a>
                                         <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                                            <li><a class="dropdown-item" href="SistemaCC.html">Sistema de CC</a></li>
-                                            <li><a class="dropdown-item" href="TipoCC.html">Tipo de CC</a></li>
-                                            <li><a class="dropdown-item" href="Estado.html">Estado de Comabte</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'Sistema' %}">Sistema de CC</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'Tipo' %}">Tipo de CC</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'Estado' %}">Estado de Comabte</a></li>
                                           </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="SobreNosotros.html">Sobre Nosotros</a>
+                                        <a class="nav-link" href="{% url 'Sobre' %}">Sobre Nosotros</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="Contactanos.html">Contactanos</a>
+                                        <a class="nav-link" href="{% url 'Contacto' %}">Contactanos</a>
                                     </li>
                                 </ul>
 
@@ -126,7 +127,7 @@
 
                                 <div class="col-md-15">
 
-                                    <img src="Imagenes/Nova.png" id="img3" class="img-fluid m-3" style="float: left;"
+                                    <img src="{% static 'combate/Imagenes/Nova.png'%}" id="img3" class="img-fluid m-3" style="float: left;"
                                         alt="Super armadura">
                                     <div class="text-justify m-5 pt-5">
 
@@ -146,7 +147,7 @@
                                 </div>
 
                                 <div class="col-md-15">
-                                    <img src="Imagenes/Sorc.JPG" class="img-fluid" width="370px" height="650"
+                                    <img src="{% static 'combate/Imagenes/Sorc.JPG'%}" class="img-fluid" width="370px" height="650"
                                         style="float: right;" alt="Iframe">
                                     <div class="text-justify m-5 pt-5">
 
@@ -220,15 +221,15 @@
                 <div class="col">
 
                     <div class="col d-inline-flex  p-3">
-                        <a href="https://discord.com/"><img src="Imagenes/Discord.png" class="img-fluid" width="20"
+                        <a href="https://discord.com/"><img src="{% static 'combate/Imagenes/Discord.png'%}" class="img-fluid" width="20"
                                 alt=""></a>
                     </div>
                     <div class="col d-inline-flex p-3">
-                        <a href="https://twitch.com/"><img src="Imagenes/Twitch.png" class="img-fluid" width="20"
+                        <a href="https://twitch.com/"><img src="{% static 'combate/Imagenes/Twitch.png'%}" class="img-fluid" width="20"
                                 alt=""></a>
                     </div>
                     <div class="col d-inline-flex p-3">
-                        <a href="https://Youtube.com/"><img src="Imagenes/Youtube.png" class="img-fluid" width="20"
+                        <a href="https://Youtube.com/"><img src="{% static 'combate/Imagenes/Youtube.png'%}" class="img-fluid" width="20"
                                 alt=""></a>
                     </div>
                     <br> © 2021 El Libro del Combate. Derechos por Reservar. Este sitio no esta afiliado con RedFox ni
@@ -244,9 +245,9 @@
         <button onclick="topFunction()" id="myBtn" title="Go to top">Subir</button>
     </div>
 
-    <script src="/Libreria/js/boton.js"></script>
-    <script src="Libreria/js/popper.min.js"></script>
-    <script src="Libreria/js/bootstrap.min.js"></script>
+    <script src="{% static 'combate/js/boton.js'%}"></script>
+    <script src="{% static 'combate/js/popper.min.js'%}"></script>
+    <script src="{% static 'combate/js/bootstrap.min.js'%}"></script>
 </body>
 
 </html>
