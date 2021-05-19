@@ -1,11 +1,5 @@
 from django.shortcuts import render
 
-
-def Actualizacion(request):
-    actua={"nombre":"Actualizacion 15/04","descripcion":"Conoce detalles de la actualizacion."}
-
-    return render(request, 'index.html', actua)
-
 # Create your views here.
 def Inicio(request):
     actua={"nombre":"Actualizacion 15/04","descripcion":"Conoce detalles de la actualizacion."}
