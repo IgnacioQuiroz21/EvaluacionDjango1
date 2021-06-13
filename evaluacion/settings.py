@@ -78,10 +78,18 @@ WSGI_APPLICATION = 'evaluacion.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': '127.0.0.1:1521/XEPDB1',
+        'USER':'EVALUACION3',
+        'PASSWORD': '1234',
+        'TEST':{
+            'USER':'default_test',
+            'TBLSPACE':'default_test_tbls',
+            'TBLSPACE_TMP':'default_test_tbls_tmp',
+        },
+    },
 }
+
 
 
 # Password validation
