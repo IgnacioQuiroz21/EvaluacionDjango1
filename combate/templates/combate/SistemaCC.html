@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Libro de Combate</title>
-    <link rel="stylesheet" href="Libreria/css/bootstrap.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="Libreria/css/style.css">
+    <link rel="stylesheet" href="{% static 'combate/css/bootstrap.min.css' %}" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'combate/css/style.css'%}">
 
 </head>
 
-<body>
+<body style="background-image: url('{% static "/combate/Imagenes/calpheon.png"%}');">
     <!--Header -->
     <header>
         <div class="container-fluid bg-dark">
@@ -20,20 +21,16 @@
                 <div class="col-sm p-2 mx-md-5 text-center ">
 
                     <div class="col d-inline-flex  p-3">
-                        <a href="https://discord.com/"><img src="Imagenes/Discord.png" class="img-fluid" width="30"
-                                alt=""></a>
+                        <a href="https://discord.com/"><img src="{% static 'combate/Imagenes/Discord.png'%}" class="img-fluid" width="30" alt=""></a>
                     </div>
                     <div class="col d-inline-flex p-3">
-                        <a href="https://twitch.com/"><img src="Imagenes/Twitch.png" class="img-fluid" width="30"
-                                alt=""></a>
+                        <a href="https://twitch.com/"><img src="{% static 'combate/Imagenes/Twitch.png'%}" class="img-fluid" width="30" alt=""></a>
                     </div>
                     <div class="col d-inline-flex p-3">
-                        <a href="https://Youtube.com/"><img src="Imagenes/Youtube.png" class="img-fluid" width="30"
-                                alt=""></a>
+                        <a href="https://Youtube.com/"><img src="{% static 'combate/Imagenes/Youtube.png'%}" class="img-fluid" width="30" alt=""></a>
                     </div>
                     <div class="col d-inline-flex p-3">
-                        <a href="https://blackdesert.playredfox.com/black_desert"><img src="Imagenes/BDO.png" class="img-fluid" width="30"
-                                alt=""></a>
+                        <a href="https://blackdesert.playredfox.com/black_desert"><img src="{% static 'combate/Imagenes/BDO.png'%}" class="img-fluid" width="30" alt=""></a>
                     </div>
 
                 </div>
@@ -47,8 +44,7 @@
         <div class="container-fluid ">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <a href="index.html"><img src="Imagenes/Logotipo.png" style="margin: 0 auto;" width="250"
-                            alt=""></a>
+                    <a href="{% url 'Inicio' %}"><img src="{% static 'combate/Imagenes/Logotipo.png'%}" class="img-fluid" style="margin: 0 auto;" width="250" alt=""></a>
                 </div>
 
 
@@ -59,7 +55,7 @@
     </section>
 
     <!--Section -->
-    <section >
+    <section>
         <div class="container-fluid">
             <div class="row ">
                 <div class="pageWidth ">
@@ -68,9 +64,7 @@
                         <nav class="navbar  navbar-expand-lg navbar-dark bg-dark p-4 ">
 
 
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
-                                aria-label="Toogle navigation">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toogle navigation">
 
                                 <span class="navbar-toggler-icon"> </span>
                             </button>
@@ -81,12 +75,12 @@
                                         <a class="nav-link" href="index.html">Inicio</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a class="nav-link dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Guias</a>
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Guias</a>
                                         <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                                             <li><a class="dropdown-item" href="SistemaCC.html">Sistema de CC</a></li>
                                             <li><a class="dropdown-item" href="TipoCC.html">Tipo de CC</a></li>
                                             <li><a class="dropdown-item" href="Estado.html">Estado de Comabte</a></li>
-                                          </ul>
+                                        </ul>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="SobreNosotros.html">Sobre Nosotros</a>
@@ -101,9 +95,9 @@
 
                         </nav>
                         <!--Inicio-->
-                        
-                        
-           
+
+
+
                         <div class="container fluid">
 
                             <div class="row">
@@ -112,83 +106,75 @@
                                 <div class="col-md-15">
 
                                     <div class="ratio ratio-16x9 h-45 ">
-                                        <iframe src="https://www.youtube.com/embed/I_xgcDCIfh8"  title="YouTube video" allowfullscreen></iframe>
-                                      </div>
-                                      
-                                
-                                    
+                                        <iframe src="https://www.youtube.com/embed/I_xgcDCIfh8" title="YouTube video" allowfullscreen></iframe>
+                                    </div>
+
+
+
 
                                 </div>
                                 <div class="col">
 
-                                    <div class="text-justify m-5 pt-5"> 
+                                    <div class="text-justify m-5 pt-5">
                                         <h1 class="mb-5"> Sistema de CCs</h1>
-                                        <p class="d-inline"> Antes de mencionar los cc que existen en bdo es importante comprender que existe un máximo de veces que 
-                                            pueden incapacitar a alguien y para esto existe el contador de CC el límite es 2 todos los cc aumentan el contador en 1 
-                                            con excepción de Paralizado que aumenta un 0.7 y los impactos al suelo y aire no afectan al contador  esto quiere decir 
-                                            que si yo conecto con un paralizado el contador de CC comienza en 0.7 y  si luego aplico un noqueo el contador es 1.7 y 
-                                            como el contador aun no esta en 2 puedes dar otro cc y terminará en 2.7,lo mismo ocurrirá si aplicas por ejemplo desmayo 
-                                            contador 1 luego paralizado contador 1.7 y como aun no llega a 2 podemos terminar con un flotamiento llegando a 2.7 . 
-                                            Al llegar al límite del contador se  aplicará inmunidad contra el cc al enemigo por 5 segundos desde el momento que el 
-                                            contador llega a 2 o más por lo tanto si aplicamos un cc  que deje al enemigo  en el piso por 4 segundos y luego aplicamos
-                                             un impacto al suelo que tiene un 30% de entrar y no afecta al contador habrán pasado 5 segundos y podremos realizar el 
-                                             combo nuevamente.
+                                        <p class="d-inline"> Antes de mencionar los cc que existen en bdo es importante comprender que existe un máximo de veces que pueden incapacitar a alguien y para esto existe el contador de CC el límite es 2 todos los cc aumentan el contador
+                                            en 1 con excepción de Paralizado que aumenta un 0.7 y los impactos al suelo y aire no afectan al contador esto quiere decir que si yo conecto con un paralizado el contador de CC comienza en 0.7 y si luego aplico
+                                            un noqueo el contador es 1.7 y como el contador aun no esta en 2 puedes dar otro cc y terminará en 2.7,lo mismo ocurrirá si aplicas por ejemplo desmayo contador 1 luego paralizado contador 1.7 y como aun no
+                                            llega a 2 podemos terminar con un flotamiento llegando a 2.7 . Al llegar al límite del contador se aplicará inmunidad contra el cc al enemigo por 5 segundos desde el momento que el contador llega a 2 o más por
+                                            lo tanto si aplicamos un cc que deje al enemigo en el piso por 4 segundos y luego aplicamos un impacto al suelo que tiene un 30% de entrar y no afecta al contador habrán pasado 5 segundos y podremos realizar
+                                            el combo nuevamente.
                                         </p>
                                     </div>
-                                    
+
 
                                 </div>
 
 
 
+                            </div>
+
+
+
+
+
+
                         </div>
-
-
-
-
-
-
                     </div>
+
+
                 </div>
+
+
+
+
 
 
             </div>
 
 
 
-
-
-
-        </div>
-
-
-
     </section>
 
-    
+
 
 
 
     <!--Footer -->
-    <div id="footer" class="p-5" >
+    <div id="footer" class="p-5">
         <div class="container-fluid text-center bg-dark ">
             <div class="row">
                 <div class="col">
 
                     <div class="col d-inline-flex  p-3">
-                        <a href="https://discord.com/"><img src="Imagenes/Discord.png" class="img-fluid" width="20"
-                                alt=""></a>
+                        <a href="https://discord.com/"><img src="{% static 'combate/Imagenes/Discord.png'%}" class="img-fluid" width="20" alt=""></a>
                     </div>
                     <div class="col d-inline-flex p-3">
-                        <a href="https://twitch.com/"><img src="Imagenes/Twitch.png" class="img-fluid" width="20"
-                                alt=""></a>
+                        <a href="https://twitch.com/"><img src="{% static 'combate/Imagenes/Twitch.png'%}" class="img-fluid" width="20" alt=""></a>
                     </div>
                     <div class="col d-inline-flex p-3">
-                        <a href="https://Youtube.com/"><img src="Imagenes/Youtube.png" class="img-fluid" width="20"
-                                alt=""></a>
+                        <a href="https://Youtube.com/"><img src="{% static 'combate/Imagenes/Youtube.png'%}" class="img-fluid" width="20" alt=""></a>
                     </div>
-                    <br>
-                    © 2021 El Libro del Combate. Derechos por Reservar. Este sitio no esta afiliado con RedFox ni PearlAbyss
+                    <br> © 2021 El Libro del Combate. Derechos por Reservar. Este sitio no esta afiliado con RedFox ni PearlAbyss
 
 
                 </div>
@@ -201,9 +187,9 @@
 
     </div>
 
-    <script src="/Libreria/js/boton.js"></script>
-    <script src="Libreria/js/popper.min.js"></script>
-    <script src="Libreria/js/bootstrap.min.js"></script>
+    <script src="{% static 'combate/js/boton.js'%}"></script>
+    <script src="{% static 'combate/js/popper.min.js'%}"></script>
+    <script src="{% static 'combate/js/bootstrap.min.js'%}"></script>
 </body>
 
 </html>
