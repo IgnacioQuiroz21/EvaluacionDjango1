@@ -7,7 +7,7 @@ from django.db.models.deletion import CASCADE
 class Proveedor(models.Model):
     idProv = models.AutoField(verbose_name='ID', serialize=True, auto_created=True, primary_key=True )
     nombre = models.CharField(max_length=100,verbose_name='Nombre del Proveedor')  
-    imagen = models.ImageField
+    imagen = models.ImageField(null=True, blank=True)
     
 
     def __str__(self):
