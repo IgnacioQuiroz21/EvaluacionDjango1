@@ -79,7 +79,7 @@
                                         <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                                             <li><a class="dropdown-item" href="{% url 'Sistema' %}">Sistema de CC</a></li>
                                             <li><a class="dropdown-item" href="{% url 'Tipo' %}">Tipo de CC</a></li>
-                                            <li><a class="dropdown-item" href="{% url 'Estado' %}">Estado de Comabte</a></li>
+                                            <li><a class="dropdown-item" href="{% url 'Estado' %}">Estado de Combate</a></li>
                                           </ul>
                                     </li>
                                     <li class="nav-item">
@@ -107,26 +107,26 @@
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <a href="https://www.blackdesertfoundry.com/"> <img src="{% static 'combate/Imagenes/BlackDesertFoundry.jpg'%}" class="d-block w-100 " alt="..."></a>
+                                        <a href="https://www.blackdesertfoundry.com/"> <img src="{{ img1.url }}" class="d-block w-100 " alt="..."></a>
                                         <div class="carousel-caption d-block d-md-block">
-                                            <h1>Black Desert Foundry</h5>
-                                                <h5>Actualizaciones, Guias y más aquí!
+                                            <h1>{{titulo1}}</h5>
+                                                <h5>{{descr1}}
                                             </h1>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <a href="https://bdocodex.com/es/skillbuilder/"> <img src="{% static 'combate/Imagenes/bdocodex.jpg'%}" class="d-block w-100 " alt="..."></a>
+                                        <a href="https://bdocodex.com/es/skillbuilder/"> <img src="{{ img2.url }}" class="d-block w-100 " alt="..."></a>
                                         <div class="carousel-caption d-block d-md-block">
-                                            <h1>Black Desert Codex</h5>
-                                                <h5>Aprende tus habilidades</h5>
+                                            <h1>{{titulo2}}</h5>
+                                                <h5>{{descr2}}</h5>
 
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <a href="https://bdoplanner.com/"><img src="{% static 'combate/Imagenes/BdoBuilder.jpg'%}" class="d-block w-100 " alt="..."></a>
+                                        <a href="https://bdoplanner.com/"><img src="{{ img3.url }}" class="d-block w-100 " alt="..."></a>
                                         <div class="carousel-caption d-block d-md-block">
-                                            <h1>Black Desert Planner</h5>
-                                                <h5>Arma tu build y aprende</h5>
+                                            <h1>{{titulo3}}</h5>
+                                                <h5>{{descr3}}</h5>
                                         </div>
                                     </div>
 
@@ -175,20 +175,20 @@
                                 <div class="col-sm">
                                     <div class="card w-100 card-border mb-5">
                                         <a href="https://www.blackdesertfoundry.com/global-lab-updates-8th-april-2021/">
-                                            <img class="card-img-top" src="{% static 'combate/Imagenes/BlackDesertFoundry.jpg'%}" alt="Card image cap"></a>
+                                            <img class="card-img-top" src="{{ img.url }}" alt="Card image cap"></a>
                                         <div class="card-body">
-                                            <h5 class="card-title text-dark">Actualizacion 08/04</h5>
-                                            <p class="card-text text-dark">Conoce detalles de la actualizacion.</p>
+                                            <h5 class="card-title text-dark">Actualizacion {{fecha2}}</h5>
+                                            <p class="card-text text-dark">{{desc2}}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm">
                                     <div class="card w-100 card-border mb-5">
                                         <a href="https://www.blackdesertfoundry.com/global-lab-updates-15th-april-2021/">
-                                            <img class="card-img-top" src="{% static 'combate/Imagenes/BlackDesertFoundry.jpg'%}" alt="Card image cap"></a>
+                                            <img class="card-img-top" src="{{ img.url }}" alt="Card image cap"></a>
                                         <div class="card-body">
-                                            <h5 class="card-title text-dark">{{nombre}} </h5>
-                                            <p class="card-text text-dark">{{descripcion}}</p>
+                                            <h5 class="card-title text-dark">Actualizacion {{fecha1}} </h5>
+                                            <p class="card-text text-dark">{{desc1}}</p>
                                         </div>
                                     </div>
                                 </div>
