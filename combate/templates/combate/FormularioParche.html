@@ -100,24 +100,24 @@
            <!--Formulario Parche -->        
 
                    
-           <div class="row">
+           <div class="row col d-inline-flex text-center border-2 m-3 p-3">
                         
             <form method="post" action=""  id="formulario">
 
            {% csrf_token %}
 
-           <div class="form_group"> 
-
+           <div class="form_group "> 
               {{ form.as_table}}
+
            </div>
        
            <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
-           <input type="reset"  class="btn btn-primary" id="limpiar" value="limpiar">
+           <input type="reset"  class="btn btn-primary" id="limpiar" value="Limpiar">
            <div  id="error" class="alert alert-success" role="alert">
                {{mensaje}}
            </div>
 
-
+          </div>
         </form>
 
    </div>

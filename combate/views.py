@@ -1,12 +1,35 @@
 from django.shortcuts import  render,redirect
-from .models import Parche
+from .models import Anuncio, Parche, Proveedor
 from .forms import ParcheForm
 
 # Create your views here.
 def Inicio(request):
-    actua={"nombre":"Actualizacion 15/04","descripcion":"Conoce detalles de la actualizacion."}
-    
-    return render(request,'combate\index.html',actua)
+    ultimoParche=Parche.objects.all().reverse()[0]
+    penultimoParche=Parche.objects.all().reverse()[1]
+    Proov= Proveedor.objects.get(nombre=ultimoParche.nombre)
+    anun1 = Anuncio.objects.all()[0]
+    anun2 = Anuncio.objects.all()[1]
+    anun3 = Anuncio.objects.all()[2]
+    img1 = Proveedor.objects.get(nombre=anun1.nombre)
+    img2 = Proveedor.objects.get(nombre=anun2.nombre)
+    img3 = Proveedor.objects.get(nombre=anun3.nombre)
+    datos = {
+         'fecha1': ultimoParche.fechaParche,
+         'fecha2': penultimoParche.fechaParche,
+         'desc1' : ultimoParche.descParche,
+         'desc2' : penultimoParche.descParche,
+         'img'   : Proov.imagen,
+         'titulo1': anun1.nombre,
+         'titulo2': anun2.nombre,
+         'titulo3':anun3.nombre,
+         'descr1' : anun1.descAnuncio,
+         'descr2' : anun2.descAnuncio,
+         'descr3' : anun3.descAnuncio,
+         'img1' : img1.imagen,
+         'img2' : img2.imagen,
+         'img3' : img3.imagen
+     }
+    return render(request,'combate\index.html',datos)
 
 def SobreNosotros(request):
     return render(request,'combate\SobreNosotros.html')
