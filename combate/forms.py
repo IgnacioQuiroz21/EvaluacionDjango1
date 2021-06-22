@@ -7,7 +7,7 @@ class ParcheForm(ModelForm):
         model = Parche
         fields = ['idParche','nombre', 'fechaParche', 'descParche']
 
-        widgets={
+        widgets ={
             'fechaParche' : forms.DateInput(format=('%Y/%m/%d'), attrs={'type':'date'})
         }
   
