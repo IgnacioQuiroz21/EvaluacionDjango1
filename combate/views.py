@@ -7,6 +7,7 @@ def Inicio(request):
     ultimoParche=Parche.objects.all().reverse()[0]
     penultimoParche=Parche.objects.all().reverse()[1]
     Proov= Proveedor.objects.get(nombre=ultimoParche.nombre)
+    Proov1= Proveedor.objects.get(nombre=penultimoParche.nombre)
     anun1 = Anuncio.objects.all()[0]
     anun2 = Anuncio.objects.all()[1]
     anun3 = Anuncio.objects.all()[2]
@@ -19,6 +20,7 @@ def Inicio(request):
          'desc1' : ultimoParche.descParche,
          'desc2' : penultimoParche.descParche,
          'img'   : Proov.imagen,
+         'img4'   : Proov1.imagen,
          'titulo1': anun1.nombre,
          'titulo2': anun2.nombre,
          'titulo3':anun3.nombre,
