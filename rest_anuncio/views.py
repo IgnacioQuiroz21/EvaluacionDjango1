@@ -9,7 +9,6 @@ from .serializers import AnuncioSerializer
 
 @csrf_exempt
 @api_view(['GET','POST'])
-
 def lista_Anuncio(request):
     if request.method == 'GET':
         AnuncioA = Anuncio.objects.all()
