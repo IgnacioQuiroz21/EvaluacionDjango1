@@ -22,3 +22,26 @@ def lista_Anuncio(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET','PUT','DELETE'])
+def detalle_anuncio(request,id):
+    try:
+        AnuncioB = Anuncio.objects.get(idAnuncio=id)
+    except Anuncio.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+        
+    if request.method == 'GET':
+        serializer = AnuncioSerializer(AnuncioB)
+        return Response(serializer.data)
+    if request.method == 'PUT':
+        data = JSONParser().parse(request)
+        serializer = AnuncioSerializer(AnuncioB,data=data)
+        if(serializer.is_valid()):
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'DELETE':
+        AnuncioB.delete()
+        return Response(status=status.HTTP_204_NOT_CONTENT)
