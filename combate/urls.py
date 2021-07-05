@@ -12,6 +12,4 @@ urlpatterns = [
      path('formularioparche/',formularioparche,name="formularioparche"),
      path('modificarparche/<id>',modificarParche,name="modificarParche"),
      path('eliminarparche/<id>',eliminarparche,name="eliminarparche"),
-
-
 ]
