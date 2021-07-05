@@ -117,6 +117,24 @@
                {{mensaje}}
            </div>
 
+           <div class="row">
+            {% if request.user.is_authenticated and user.username == "admin" %}
+            <table class="table text-white" id="Anuncios">
+                
+                    <tr>
+                        <th scope="col">Id del Anuncio</th>
+                        <th scope="col">Nombre del Proovedor</th>
+                        <th scope="col">Descripcion del anuncio</th>
+                        <th scope="col">Modificar</th>
+                        <th scope="col">Eliminar</th>
+                    </tr>
+
+
+            </table>
+            {% endif %}
+        </div>
+
+
           </div>
         </form>
 
@@ -160,10 +178,11 @@
     </div>
 
 
-
-
-
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
     <script src="{% static 'combate/js/boton.js'%}"></script>
     <script src="{% static 'combate/js/popper.min.js'%}"></script>
     <script src="{% static 'combate/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'combate/js/scrippt.js'%}"></script>
+    
 </body>
