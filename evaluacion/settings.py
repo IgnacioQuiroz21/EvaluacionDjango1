@@ -112,6 +112,10 @@ DATABASES = {
     },
 }
 
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY='Client ID'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET='Client Secret'
+SOCIAL_AUTH__OAUTH2_KEY='ID'
+SOCIAL_AUTH__OAUTH2_SECRET='SECRET'
 
 
 # Password validation
@@ -161,6 +165,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTHENTICATION_BACKENDS = [
+    'social_core.backends.google.GoogleOAuth2',
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
