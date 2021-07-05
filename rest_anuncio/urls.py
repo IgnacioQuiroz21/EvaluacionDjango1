@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import lista_Anuncio,detalle_anuncio
-from .viewsLogin import login
+from rest_anuncio.viewsLogin import login
 
 urlpatterns = [
      path('listar/',lista_Anuncio,name="Listar"),

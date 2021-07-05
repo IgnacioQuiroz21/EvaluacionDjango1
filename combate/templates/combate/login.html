@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Libro de Combate</title>
+    <link rel="stylesheet" href="{% static 'combate/css/bootstrap.min.css'%}" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'combate/css/style.css'%}">
+
+</head>
+
+<body style="background-image: url('{% static "/combate/Imagenes/calpheon.png "%}');">
+    <!--Header -->
+    <header>
+        <div class="container-fluid bg-dark ">
+
+            <div class="row  ">
+                <div class="col-sm p-2 mx-md-5 text-center">
+
+                    <div class="col d-inline-flex  p-3">
+                        <a href="https://discord.com/"><img src="{% static 'combate/Imagenes/Discord.png'%}" class="img-fluid" width="30" alt=""></a>
+                    </div>
+                    <div class="col d-inline-flex p-3">
+                        <a href="https://twitch.com/"><img src="{% static 'combate/Imagenes/Twitch.png'%}" class="img-fluid" width="30" alt=""></a>
+                    </div>
+                    <div class="col d-inline-flex p-3">
+                        <a href="https://Youtube.com/"><img src="{% static 'combate/Imagenes/Youtube.png'%}" class="img-fluid" width="30" alt=""></a>
+                    </div>
+                    <div class="col d-inline-flex p-3">
+                        <a href="https://blackdesert.playredfox.com/black_desert"><img src="{% static 'combate/Imagenes/BDO.png'%}" class="img-fluid" width="30" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--   Logo  -->
+
+    <section>
+
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="{% url 'Inicio' %}"><img src="{% static 'combate/Imagenes/Logotipo.png'%}" class="img-fluid"style="margin: 0 auto;" width="250"
+                            alt=""></a>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--Section -->
+    <section>
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="pageWidth ">
+                    <div class="pageContent">
+
+
+
+
+                    </div>
+
+
+                 </div>       
+
+
+            </div>
+
+
+
+         </div>
+
+                       
+
+
+
+                       
+
+    </section>
+
+
+
+
+
+    <!--Footer -->
+    <div id="footer" class="p-5">
+        <div class="container-fluid text-center  bg-dark ">
+            <div class="row">
+                <div class="col">
+
+                    <div class="col d-inline-flex  p-3">
+                        <a href="https://discord.com/"><img src="{% static 'combate/Imagenes/Discord.png'%}" class="img-fluid" width="20" alt=""></a>
+                    </div>
+                    <div class="col d-inline-flex p-3">
+                        <a href="https://twitch.com/"><img src="{% static 'combate/Imagenes/Twitch.png'%}" class="img-fluid" width="20" alt=""></a>
+                    </div>
+                    <div class="col d-inline-flex p-3">
+                        <a href="https://Youtube.com/"><img src="{% static 'combate/Imagenes/Youtube.png'%}" class="img-fluid" width="20" alt=""></a>
+                    </div>
+                    <br> © 2021 El Libro del Combate. Derechos por Reservar. Este sitio no esta afiliado con RedFox ni PearlAbyss
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Subir</button>
+    </div>
+
+
+    <script src="{% static 'combate/js/boton.js'%}"></script>
+    <script src="{% static 'combate/js/popper.min.js'%}"></script>
+    <script src="{% static 'combate/js/bootstrap.min.js'%}"></script>
+</body>
+
+</html>

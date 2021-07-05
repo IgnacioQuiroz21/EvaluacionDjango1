@@ -23,9 +23,7 @@ def login(request):
     pass_valido = check_password(password, user.password)
 
     if not pass_valido:
-        return Response("Password incorrecta")  
+        return Response("Password incorrecta")
 
     token, created = Token.objects.get_or_create(user=user)
-    return Response(token.key)  
-
- 
+    return Response(token.key)
