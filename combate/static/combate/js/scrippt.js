@@ -5,7 +5,10 @@ $(document).ready(function() {
        
         $.each(anuncio, function(i, item) {
             $('#Anuncios').append("<tr><td>" + item.idAnuncio + "</td><td>" + item.nombre + 
-                                "</td><td>" + item.descAnuncio + "</td></tr>");
+                                "</td><td>" + item.descAnuncio + "</td><td>"+"ayudaa"+"</td><td>"+ "ayudaa"+"</td></tr>");
+
+       
+
         });
 
         
@@ -13,6 +16,22 @@ $(document).ready(function() {
         console.log('Error al consumir la API!');
     });
 
+
+    $.getJSON('http://127.0.0.1:8000/api/detalleanuncio/<id>', function a(data,) {
+        var anuncio = data;
+       
+        $.each(anuncio, function(i, item) {
+            $('#Anuncios').append("<tr><td>" + item.idAnuncio + "</td><td>" + item.nombre + 
+                                "</td><td>" + item.descAnuncio + "</td><td>"+"ayudaa"+"</td><td>"+ "ayudaa"+"</td></tr>");
+
+       
+
+        });
+
+        
+    }).fail(function() {
+        console.log('Error al consumir la API!');
+    });
 
 
     
