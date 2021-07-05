@@ -88,3 +88,6 @@ def eliminarparche(request,id):
     parche = Parche.objects.get(idParche=id)
     parche.delete()
     return redirect(to='Listar')
+
+def ListarApi(request):
+    return render(request,'combate\ListarApi.html')     

@@ -89,7 +89,41 @@
                                         <a class="nav-link" href="{% url 'Contacto' %}">Contactanos</a>
                                     </li>
                                 </ul>
+                                {% if request.user.is_authenticated and user.username == "admin" %}
 
+                                <ul class="navbar-nav">
+                                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+                                        
+                                        <div class="collapse navbar-collapse" id="navbarText">
+                                           
+                                            <li class="nav-item">
+                                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >Crud Api</a>
+                                                <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                                                    <li><a class="dropdown-item" href="{% url 'ListarApi' %}">Listar Api</a></li>
+                                                    <li><a class="dropdown-item" href="#">Unknown</a></li>
+                                                    <li><a class="dropdown-item" href="#">Unknown</a></li>
+                                                  </ul>
+                                            </li>  
+                                          
+                                        </div>
+    
+                                    </nav>
+                                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+                                        <div class="collapse navbar-collapse" id="navbarText">
+                                           
+                                            <li class="nav-item">
+                                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >Crud SQL</a>
+                                                <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                                                    <li><a class="dropdown-item" href="{% url 'ListarSql' %}">Listar</a></li>
+                                                    <li><a class="dropdown-item" href="{% url 'formularioparche' %}">Formulario Parche</a></li>
+                                                    
+                                                  </ul>
+                                            </li> 
+                                           
+                                        </div>
+                                    </nav>
+                                </ul>
+                                {% endif %}
 
                             </div>
 
@@ -99,28 +133,11 @@
 
            <!--Formulario Parche -->        
 
-                   
-           <div class="row col d-inline-flex text-center border-2 m-3 p-3">
-                        
-            <form method="post" action=""  id="formulario">
-
-           {% csrf_token %}
-
-           <div class="form_group "> 
-              {{ form.as_table}}
-
-           </div>
-       
-           <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
-           <input type="reset"  class="btn btn-primary" id="limpiar" value="Limpiar">
-           <div  id="error" class="alert alert-success" role="alert">
-               {{mensaje}}
-           </div>
-
-           <div class="row">
-            {% if request.user.is_authenticated and user.username == "admin" %}
-            <table class="table text-white" id="Anuncios">
                 
+           <div class="row p-5">
+            {% if request.user.is_authenticated and user.username == "admin" %}
+            <table class="table text-white " id="Anuncios">
+                {% csrf_token %}
                     <tr>
                         <th scope="col">Id del Anuncio</th>
                         <th scope="col">Nombre del Proovedor</th>
@@ -132,6 +149,7 @@
 
             </table>
             {% endif %}
+
         </div>
 
 
@@ -183,6 +201,56 @@
     <script src="{% static 'combate/js/boton.js'%}"></script>
     <script src="{% static 'combate/js/popper.min.js'%}"></script>
     <script src="{% static 'combate/js/bootstrap.min.js'%}"></script>
-    <script src="{% static 'combate/js/scrippt.js'%}"></script>
+    <script >
+               
+                                                                                
+                    $.getJSON('http://127.0.0.1:8000/api/listar', function(data) {
+                        var anuncio = data;
+                    
+                        $.each(anuncio, function(i, item) {
+                            $('#Anuncios').append("<tr><td>" + item.idAnuncio + "</td><td>" + item.nombre + 
+                                                "</td><td>" + item.descAnuncio +
+                            "<td><button class='btn btn-link' onclick='return confirm(\"Estas seguro de borrar?\",BorrarFila(" 
+                                + item.idAnuncio + "))'>Borrar</button></td>" +
+                            "<td><button class='btn btn-link' onclick='return confirm(\"Estas seguro de Actualizar?\",Actualizar(" 
+                                + item.idAnuncio + "))'>Actualizar</button></td>" +
+                            "           </tr>");
+                    
+
+                        });
+
+                        
+                    }).fail(function() {
+                        console.log('Error al consumir la API!');
+                    });
+
+                    function BorrarFila(id) {
+            
+                        $.ajax({
+                            type: 'DELETE',
+                            contentType:'application/json',
+                            dataType: 'json',
+                            
+
+                            url: "http://127.0.0.1:8000/api/detalleanuncio/"+id+"",
+                            error: function (xhr, status, error) {
+
+                                var err_msg = ''
+                                for (var prop in xhr.responseJSON) {
+                                    err_msg += prop + ': ' + xhr.responseJSON[prop] + '\n';
+                                }
+
+                                alert(err_msg);
+                            },
+                            success: function (result) {
+                                    //algo                             
+                            }
+                        });
+                    }
+
+               
+
+
+    </script>
     
 </body>
