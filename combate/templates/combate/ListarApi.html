@@ -137,7 +137,7 @@
            <div class="row p-5">
             {% if request.user.is_authenticated and user.username == "admin" %}
             <table class="table text-white " id="Anuncios">
-                {% csrf_token %}
+                
                     <tr>
                         <th scope="col">Id del Anuncio</th>
                         <th scope="col">Nombre del Proovedor</th>
