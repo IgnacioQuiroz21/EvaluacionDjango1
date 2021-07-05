@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'combate',
     'rest_anuncio',
     'rest_framework',
+    'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -72,6 +73,13 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+    'rest_framework.authentication.TokenAuthentication',
+     'rest_framework.authentication.SessionAuthentication',
+    ],
+}
 
 WSGI_APPLICATION = 'evaluacion.wsgi.application'
 

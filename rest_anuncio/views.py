@@ -1,14 +1,18 @@
 from django.shortcuts import render
 from rest_framework import status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
 from combate.models import Anuncio
 from .serializers import AnuncioSerializer
 
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+
 @csrf_exempt
 @api_view(['GET','POST'])
+@permission_classes((IsAuthenticated,))
 def lista_Anuncio(request):
     if request.method == 'GET':
         AnuncioA = Anuncio.objects.all()
@@ -25,6 +29,7 @@ def lista_Anuncio(request):
 
 
 @api_view(['GET','PUT','DELETE'])
+@permission_classes((IsAuthenticated,))
 def detalle_anuncio(request,id):
     try:
         AnuncioB = Anuncio.objects.get(idAnuncio=id)
@@ -44,4 +49,4 @@ def detalle_anuncio(request,id):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'DELETE':
         AnuncioB.delete()
-        return Response(status=status.HTTP_204_NOT_CONTENT)
+        return Response(status=status.HTTP_200_OK)
