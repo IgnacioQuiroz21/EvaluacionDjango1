@@ -1,4 +1,6 @@
 {% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,9 +89,9 @@
                                         <a class="nav-link" href="{% url 'Contacto' %}">Contactanos</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{% url 'social:begin' 'google-oauth2' %}">Login con google</a>
+                                        <a class="nav-link" href="{% provider_login_url 'google' %}">Login con google</a>
                                     </li>
-                                  
+                                
                                    
                                 </ul>
                                 {% if request.user.is_authenticated and user.username == "admin" %}

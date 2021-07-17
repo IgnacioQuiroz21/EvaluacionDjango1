@@ -21,13 +21,13 @@ from django.conf.urls.static import static
 from django.conf.urls import include
 from django.conf.urls import url
 
+
 urlpatterns = [
   
     path('admin/',admin.site.urls),
     path('', include('combate.urls')),
     path('api/', include('rest_anuncio.urls')),
     path('accounts/', include('allauth.urls')),
-    url('api/login', include('social_django.urls', namespace='social')),
     
 ]
 if settings.DEBUG:

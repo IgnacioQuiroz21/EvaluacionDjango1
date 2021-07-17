@@ -1,4 +1,8 @@
 {% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,6 +37,7 @@
                         <a href="https://blackdesert.playredfox.com/black_desert"><img src="{% static 'combate/Imagenes/BDO.png'%}" class="img-fluid" width="30" alt=""></a>
                     </div>
                 </div>
+               
             </div>
         </div>
     </header>
@@ -60,8 +65,40 @@
             <div class="row ">
                 <div class="pageWidth ">
                     <div class="pageContent">
+                       
+                        <div class="login-box">  
+                            <h1>Iniciar Sesión</h1>
+                            <form method="POST" action="{% url 'Inicio' %}" id="login" name="login" >
+                                {% csrf_token %}
+                             <!--USERNAME-->
+                              <p><label class="correo" for="correo">Usuario</label> 
+                                {{form.username}}</p>
+                              <input type="text" name="username" placeholder="Usuario">
+                          
+                          
+                              <!--Password-->
+                              
+                              <p><label class="password" for="password">Contraseña</label> 
+                                {{ form.password }}</p>
+                              <input type="password" name="password" placeholder="Contraseña">
+                          
+                              <!--Iniciar sesión-->
+                             <input type="submit" value="Iniciar Sesión">
+                             
+                            </form>
+                           
 
+                         <br>
+                          
+                          <form action="{% provider_login_url 'google' %}">
+       
+                            <input type="submit" value="Iniciar Sesion con Google">
 
+                          </form>
+
+                         
+                          
+                          </div>
 
 
                     </div>
