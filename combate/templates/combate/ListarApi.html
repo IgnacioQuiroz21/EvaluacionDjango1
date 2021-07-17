@@ -93,20 +93,9 @@
 
                                 <ul class="navbar-nav">
                                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-                                        
-                                        <div class="collapse navbar-collapse" id="navbarText">
-                                           
-                                            <li class="nav-item">
-                                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >Crud Api</a>
-                                                <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                                                    <li><a class="dropdown-item" href="{% url 'ListarApi' %}">Listar Api</a></li>
-                                                    <li><a class="dropdown-item" href="#">Unknown</a></li>
-                                                    <li><a class="dropdown-item" href="#">Unknown</a></li>
-                                                  </ul>
-                                            </li>  
-                                          
-                                        </div>
-    
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{% url 'ListarApi' %}">Listar Api</a>
+                                        </li>    
                                     </nav>
                                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
                                         <div class="collapse navbar-collapse" id="navbarText">
@@ -136,14 +125,12 @@
                 
            <div class="row p-5">
             {% if request.user.is_authenticated and user.username == "admin" %}
-            <table class="table text-white " id="Anuncios">
+            <table class="table text-center text-white p-5 pt-3 border" id="Anuncios">
                 
                     <tr>
                         <th scope="col">Id del Anuncio</th>
                         <th scope="col">Nombre del Proovedor</th>
                         <th scope="col">Descripcion del anuncio</th>
-                        <th scope="col">Modificar</th>
-                        <th scope="col">Eliminar</th>
                     </tr>
 
 
@@ -208,13 +195,7 @@
                         var anuncio = data;
                     
                         $.each(anuncio, function(i, item) {
-                            $('#Anuncios').append("<tr><td>" + item.idAnuncio + "</td><td>" + item.nombre + 
-                                                "</td><td>" + item.descAnuncio +
-                            "<td><button class='btn btn-link' onclick='return confirm(\"Estas seguro de borrar?\",BorrarFila(" 
-                                + item.idAnuncio + "))'>Borrar</button></td>" +
-                            "<td><button class='btn btn-link' onclick='return confirm(\"Estas seguro de Actualizar?\",Actualizar(" 
-                                + item.idAnuncio + "))'>Actualizar</button></td>" +
-                            "           </tr>");
+                            $('#Anuncios').append("<tr><td>" + item.idAnuncio + "</td><td>" + item.nombre + "</td><td>" + item.descAnuncio + "</tr>");
                     
 
                         });
