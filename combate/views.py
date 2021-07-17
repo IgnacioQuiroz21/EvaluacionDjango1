@@ -89,14 +89,14 @@ def modificarParche(request, id):
 def eliminarparche(request,id):
     parche = Parche.objects.get(idParche=id)
     parche.delete()
-    return redirect(to='Listar')
+    return redirect(to='ListarSql')
 
 def ListarApi(request):
     return render(request,'combate\ListarApi.html')
     
 def login(request):
     if request.user.is_authenticated:
-        return redirect('combate\index.html')
+        return redirect('Inicio')
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -105,7 +105,7 @@ def login(request):
 
         if user is not None:
             login(request, user)
-            return redirect('combate\index.html')
+            return redirect('Inicio')
         else: 
             messages.info(request,'Usuario o Contraseña incorrecta')
           

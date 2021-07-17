@@ -19,7 +19,8 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import include
-from django.conf.urls import url
+
+
 
 
 urlpatterns = [
@@ -28,6 +29,8 @@ urlpatterns = [
     path('', include('combate.urls')),
     path('api/', include('rest_anuncio.urls')),
     path('accounts/', include('allauth.urls')),
+    path('accountss/', include('django.contrib.auth.urls')),
+
     
 ]
 if settings.DEBUG:

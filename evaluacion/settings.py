@@ -140,7 +140,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-MX'
 
 TIME_ZONE = 'UTC'
 
@@ -183,3 +183,4 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 7
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL ='/'
+LOGOUT_REDIRECT_URL ='/'

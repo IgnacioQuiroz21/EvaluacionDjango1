@@ -13,5 +13,5 @@ urlpatterns = [
      path('modificarparche/<id>',modificarParche,name="modificarParche"),
      path('eliminarparche/<id>',eliminarparche,name="eliminarparche"),
      path('ListarApi/',ListarApi,name="ListarApi"),
-     path('login/',login,name="login"),
+     
 ]

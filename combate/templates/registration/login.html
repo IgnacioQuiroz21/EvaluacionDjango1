@@ -61,38 +61,35 @@
 
     <!--Section -->
     <section>
-        <div class="container-fluid">
+        <div class="container-sm p-4 w-50">
             <div class="row ">
-                <div class="pageWidth ">
+                <div>
                     <div class="pageContent">
                        
                         <div class="login-box">  
-                            <h1>Iniciar Sesión</h1>
-                            <form method="POST" action="{% url 'Inicio' %}" id="login" name="login" >
+                            <h1 class=" text-center">Iniciar Sesión</h1>
+                            <form method="POST"  action="" >
                                 {% csrf_token %}
-                             <!--USERNAME-->
-                              <p><label class="correo" for="correo">Usuario</label> 
-                                {{form.username}}</p>
-                              <input type="text" name="username" placeholder="Usuario">
-                          
-                          
-                              <!--Password-->
-                              
-                              <p><label class="password" for="password">Contraseña</label> 
-                                {{ form.password }}</p>
-                              <input type="password" name="password" placeholder="Contraseña">
-                          
+                             
+                              <div class="d-grid  p-5 text-center" >
+                                {{form.as_table}}
+                              </div>
+                                
+                   
                               <!--Iniciar sesión-->
-                             <input type="submit" value="Iniciar Sesión">
+                              <div class="d-flex justify-content-md-center">
+                                <input  type="submit" value="Conectar">
+                              </div>
+                             
                              
                             </form>
                            
 
                          <br>
                           
-                          <form action="{% provider_login_url 'google' %}">
+                          <form class="d-flex justify-content-md-center" action="{% provider_login_url 'google' %}">
        
-                            <input type="submit" value="Iniciar Sesion con Google">
+                            <input type="submit" value="Iniciar Sesión con Google">
 
                           </form>
 
